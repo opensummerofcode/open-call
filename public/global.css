@@ -1,14 +1,12 @@
 @font-face {
-  font-family: "Rubik";
+  font-family: 'Roboto';
   font-weight: 400;
-  src: url("...");
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Karla";
+  font-family: 'Nunito';
   font-weight: 400;
-  src: url("...");
   font-display: swap;
 }
 
@@ -16,8 +14,8 @@
   --color-white: #fff;
   --color-off-white: #f9f9f9;
   --color-black: #000;
-  --fonts-copy: "Karla", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  --fonts-titles: "Rubik", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  --fonts-copy: 'Nunito', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --fonts-titles: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 html {
