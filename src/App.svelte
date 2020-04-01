@@ -1,7 +1,8 @@
 <script>
+  import smoothscroll from 'smoothscroll-polyfill';
   import addAnalytics from './analytics';
 
-  // Analytics
+  smoothscroll.polyfill();
   if (process.env.production) addAnalytics();
 </script>
 
