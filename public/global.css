@@ -20,8 +20,9 @@
   --color-yellow: #fcb70f;
   --color-red: #f14a3b;
   --color-danger: #8c312d;
-  --fonts-copy: 'Nunito', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  --fonts-titles: 'Oswald', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --font-copy: 'Nunito', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --font-titles: 'Oswald', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --height-nav: 8.8rem;
 }
 
 html {
@@ -35,7 +36,8 @@ body {
   background-color: var(--color-white);
   color: var(--color-black);
   font-size: 1.6rem;
-  font-family: var(--fonts-copy);
+  font-family: var(--font-copy);
+  position: relative;
 }
 
 *,
@@ -51,7 +53,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var(--fonts-titles);
+  font-family: var(--font-titles);
   font-weight: normal;
 }
 
@@ -71,5 +73,14 @@ a:hover {
 
 input,
 textarea {
-  font-family: var(--fonts-copy);
+  font-family: var(--font-copy);
+}
+
+.container {
+}
+
+.container {
+  --width-container: 1140px;
+  max-width: var(--width-container);
+  margin: 0 auto;
 }

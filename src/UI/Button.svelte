@@ -1,6 +1,6 @@
 <script>
-  export let type;
-  export let href;
+  export let type = null;
+  export let href = null;
   export let primary = false;
   export let capitalize = false;
 </script>

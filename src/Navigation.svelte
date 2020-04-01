@@ -4,22 +4,24 @@
 
 <style>
   nav {
-    --nav-height: 8.8rem;
-    --nav-color: var(--color-black);
-  }
-
-  nav {
+    --nav-color: var(--color-white);
     background: transparent;
     width: 100%;
-    height: var(--nav-height);
+    height: var(--height-nav);
     display: flex;
     align-items: center;
+    justify-content: space-between;
     padding: 0 8rem;
     color: var(--nav-color);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 100;
   }
 
   ul {
     padding: 0;
+    margin: 0;
     height: 100%;
     display: flex;
     align-items: center;
@@ -36,10 +38,12 @@
     justify-self: flex-start;
     margin: 0;
     letter-spacing: 0.2rem;
+    margin-right: 4rem;
   }
 
   a {
     color: var(--nav-color);
+    font-weight: bolder;
   }
 
   a:after {
@@ -65,14 +69,10 @@
     font-size: 2.5rem;
     margin: 0;
   }
-
-  .nav-right {
-    margin-left: auto;
-  }
 </style>
 
 <nav>
-  <ul class="nav-left">
+  <ul>
     <li class="title">
       <h1>Open Call #osoc20</h1>
     </li>
@@ -89,7 +89,7 @@
       <a href="#faq">FAQ</a>
     </li>
   </ul>
-  <ul class="nav-right">
+  <ul>
     <li>
       <Button primary capitalize>Submit proposal</Button>
     </li>

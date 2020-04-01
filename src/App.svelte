@@ -2,6 +2,7 @@
   import smoothscroll from 'smoothscroll-polyfill';
 
   import Navigation from './Navigation.svelte';
+  import Introduction from './Introduction.svelte';
 
   import addAnalytics from './analytics';
 
@@ -15,8 +16,8 @@
 
 <div>
   <Navigation />
-  <main>
-    <h1>Hello world</h1>
-    <p>Greetings</p>
+  <main id="main-content">
+    <Introduction />
+    <p>Some more content</p>
   </main>
 </div>
