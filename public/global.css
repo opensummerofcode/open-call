@@ -1,5 +1,5 @@
 @font-face {
-  font-family: 'Roboto';
+  font-family: 'Oswald';
   font-weight: 400;
   font-display: swap;
 }
@@ -14,8 +14,13 @@
   --color-white: #fff;
   --color-off-white: #f9f9f9;
   --color-black: #000;
+  --color-dark-blue: #1e1d36;
+  --color-green: #1de1ae;
+  --color-yellow: #fcb70f;
+  --color-red: #f14a3b;
+  --color-danger: #8c312d;
   --fonts-copy: 'Nunito', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  --fonts-titles: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --fonts-titles: 'Oswald', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 html {
