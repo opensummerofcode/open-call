@@ -1,8 +1,12 @@
+<script>
+  import { Icon, Button } from './UI';
+</script>
+
 <style>
   .wrapper {
     height: calc(100vh - var(--height-nav));
     /* height: 100vh;*/
-    min-height: 110rem;
+    min-height: 100rem;
     width: 100%;
   }
 
@@ -30,15 +34,19 @@
   }
 
   h2 {
-    margin-top: 0;
+    margin: 0;
     text-transform: uppercase;
     font-size: 4rem;
     font-weight: 900;
     line-height: 1.6;
   }
 
-  section {
-    margin-top: 10rem;
+  .container {
+    display: flex;
+    height: 100%;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: -10rem;
   }
 
   .content {
@@ -59,6 +67,10 @@
   .image-container img {
     width: 100%;
   }
+
+  .content :global(.icon) {
+    margin-right: 0.5rem;
+  }
 </style>
 
 <div class="wrapper">
@@ -66,6 +78,15 @@
     <div class="container">
       <section class="content">
         <h2>Civic Innovators, this is your chance.</h2>
+        <p>
+          Help the Belgian government innovate in 4 public interest topics at
+          Open Summer of Code 2020 in July.
+        </p>
+        <p>
+          <Icon name="clock" />
+          Applications are open until May 8, 2020.
+        </p>
+        <Button outline capitalize>Discover topics</Button>
       </section>
 
       <div class="image-container">
