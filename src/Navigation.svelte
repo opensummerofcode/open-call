@@ -31,20 +31,25 @@
 </script>
 
 <style>
-  nav {
-    --nav-color: var(--color-white);
-    background: transparent;
+  header {
     width: 100%;
     height: var(--height-nav);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 8rem;
-    color: var(--nav-color);
     position: absolute;
     top: 0;
     left: 0;
     z-index: 100;
+    background: transparent;
+    --nav-color: var(--color-white);
+    color: var(--nav-color);
+  }
+
+  nav {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 8rem;
   }
 
   ul {
@@ -99,29 +104,31 @@
   }
 </style>
 
-<nav use:navigable on:navigate={navigate}>
-  <ul>
-    <li class="title">
-      <h1>
-        <a href="#intro">Open Call #osoc20</a>
-      </h1>
-    </li>
-    <li>
-      <a href="#about">About</a>
-    </li>
-    <li>
-      <a href="#topics">Topics</a>
-    </li>
-    <li>
-      <a href="#timeline">Timeline</a>
-    </li>
-    <li>
-      <a href="#faq">FAQ</a>
-    </li>
-  </ul>
-  <ul>
-    <li>
-      <Button capitalize>Submit proposal</Button>
-    </li>
-  </ul>
-</nav>
+<header>
+  <nav use:navigable on:navigate={navigate}>
+    <ul>
+      <li class="title">
+        <h1>
+          <a href="#intro">Open Call #osoc20</a>
+        </h1>
+      </li>
+      <li>
+        <a href="#about">About</a>
+      </li>
+      <li>
+        <a href="#topics">Topics</a>
+      </li>
+      <li>
+        <a href="#timeline">Timeline</a>
+      </li>
+      <li>
+        <a href="#faq">FAQ</a>
+      </li>
+    </ul>
+    <ul>
+      <li>
+        <Button capitalize>Submit proposal</Button>
+      </li>
+    </ul>
+  </nav>
+</header>
