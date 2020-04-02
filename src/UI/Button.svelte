@@ -9,7 +9,7 @@
   button {
     color: var(--color-white);
     border: 0;
-    padding: 0.8rem 1.6rem;
+    padding: 1rem 1.6rem;
     border-radius: 0.4rem;
     font-weight: bold;
     background-color: var(--color-light-blue);
