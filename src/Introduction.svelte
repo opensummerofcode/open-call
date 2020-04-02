@@ -4,10 +4,10 @@
 
 <style>
   .wrapper {
-    height: calc(100vh - var(--height-nav));
-    /* height: 100vh;*/
-    min-height: 100rem;
+    height: calc(100vh);
+    max-height: 110rem;
     width: 100%;
+    position: relative;
   }
 
   .background-wrapper {
@@ -87,20 +87,41 @@
       </section>
 
       <div class="image-container">
+
         <picture>
-          <img
-            sizes="(max-width: 931px) 100vw, 931px"
-            srcset="/images/intro/48383268586_ebff6f48a7_k_2_ippfgz_c_scale,w_440.jpg
+          <source
+            media="(max-width: 767px)"
+            sizes="(max-width: 1380px) 100vw, 1380px"
+            srcset="
+            images/intro/intro_w0rohr_ar_1_1,c_fill,g_auto__c_scale,w_440.jpg
             440w,
-            /images/intro/48383268586_ebff6f48a7_k_2_ippfgz_c_scale,w_631.jpg
-            631w,
-            /images/intro/48383268586_ebff6f48a7_k_2_ippfgz_c_scale,w_779.jpg
-            779w,
-            /images/intro/48383268586_ebff6f48a7_k_2_ippfgz_c_scale,w_931.jpg
-            931w"
-            src="/images/intro/48383268586_ebff6f48a7_k_2_ippfgz_c_scale,w_931.jpg"
-            alt="Team picture at Open Summer of Code" />
+            images/intro/intro_w0rohr_ar_1_1,c_fill,g_auto__c_scale,w_656.jpg
+            656w,
+            images/intro/intro_w0rohr_ar_1_1,c_fill,g_auto__c_scale,w_834.jpg
+            834w,
+            images/intro/intro_w0rohr_ar_1_1,c_fill,g_auto__c_scale,w_993.jpg
+            993w" />
+          <source
+            media="(min-width: 768px) and (max-width: 991px)"
+            sizes="(max-width: 1971px) 70vw, 1380px"
+            srcset="
+            images/intro/intro_w0rohr_ar_4_3,c_fill,g_auto__c_scale,w_538.jpg
+            538w,
+            images/intro/intro_w0rohr_ar_4_3,c_fill,g_auto__c_scale,w_721.jpg
+            721w,
+            images/intro/intro_w0rohr_ar_4_3,c_fill,g_auto__c_scale,w_881.jpg
+            881w,
+            images/intro/intro_w0rohr_ar_4_3,c_fill,g_auto__c_scale,w_1023.jpg
+            1023w" />
+          <img
+            sizes="(max-width: 3450px) 40vw, 1380px"
+            srcset=" images/intro/intro_w0rohr_c_scale,w_480.jpg 480w,
+            images/intro/intro_w0rohr_c_scale,w_681.jpg 681w,
+            images/intro/intro_w0rohr_c_scale,w_847.jpg 847w,
+            images/intro/intro_w0rohr_c_scale,w_1001.jpg 1001w"
+            alt="" />
         </picture>
+
       </div>
 
     </div>
