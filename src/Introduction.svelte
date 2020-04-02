@@ -35,10 +35,7 @@
 
   h2 {
     margin: 0;
-    text-transform: uppercase;
     font-size: 4rem;
-    font-weight: 900;
-    line-height: 1.6;
   }
 
   .container {

@@ -5,7 +5,7 @@
 }
 
 @font-face {
-  font-family: 'Nunito';
+  font-family: 'Open Sans';
   font-weight: 400;
   font-display: swap;
 }
@@ -20,7 +20,7 @@
   --color-yellow: #fcb70f;
   --color-red: #f14a3b;
   --color-danger: #8c312d;
-  --font-copy: 'Nunito', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --font-copy: 'Open Sans', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   --font-titles: 'Oswald', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   --height-nav: 8.8rem;
 }
@@ -55,6 +55,12 @@ h5,
 h6 {
   font-family: var(--font-titles);
   font-weight: normal;
+}
+
+h2 {
+  text-transform: uppercase;
+  font-weight: 900;
+  line-height: 1.6;
 }
 
 p,
