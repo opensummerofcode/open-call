@@ -38,7 +38,7 @@
     justify-self: flex-start;
     margin: 0;
     letter-spacing: 0.2rem;
-    margin-right: 4rem;
+    margin-right: 3rem;
   }
 
   a {
@@ -91,7 +91,7 @@
   </ul>
   <ul>
     <li>
-      <Button primary capitalize>Submit proposal</Button>
+      <Button capitalize>Submit proposal</Button>
     </li>
   </ul>
 </nav>

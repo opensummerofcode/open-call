@@ -1,12 +1,12 @@
 <style>
-  header {
+  .wrapper {
     height: calc(100vh - var(--height-nav));
     /* height: 100vh;*/
     min-height: 110rem;
     width: 100%;
   }
 
-  .wrapper {
+  .background-wrapper {
     height: 100%;
     width: 100%;
     position: absolute;
@@ -17,7 +17,7 @@
     z-index: 10;
   }
 
-  .wrapper::before {
+  .background-wrapper::before {
     width: 70%;
     position: absolute;
     top: 0;
@@ -31,13 +31,60 @@
 
   h2 {
     margin-top: 0;
+    text-transform: uppercase;
+    font-size: 4rem;
+    font-weight: 900;
+    line-height: 1.6;
+  }
+
+  section {
+    margin-top: 10rem;
+  }
+
+  .content {
+    width: 40rem;
+  }
+
+  .image-container {
+    width: 54rem;
+    border-top-left-radius: 20rem;
+    overflow: hidden;
+  }
+
+  @media screen and (max-width: 76.8em) {
+    .image-container {
+    }
+  }
+
+  .image-container img {
+    width: 100%;
   }
 </style>
 
-<header>
-  <div class="wrapper">
-    <section class="container">
-      <h2>Civic Innovators, this is your chance.</h2>
-    </section>
+<div class="wrapper">
+  <div class="background-wrapper">
+    <div class="container">
+      <section class="content">
+        <h2>Civic Innovators, this is your chance.</h2>
+      </section>
+
+      <div class="image-container">
+        <picture>
+          <img
+            sizes="(max-width: 931px) 100vw, 931px"
+            srcset="/images/intro/48383268586_ebff6f48a7_k_2_ippfgz_c_scale,w_440.jpg
+            440w,
+            /images/intro/48383268586_ebff6f48a7_k_2_ippfgz_c_scale,w_631.jpg
+            631w,
+            /images/intro/48383268586_ebff6f48a7_k_2_ippfgz_c_scale,w_779.jpg
+            779w,
+            /images/intro/48383268586_ebff6f48a7_k_2_ippfgz_c_scale,w_931.jpg
+            931w"
+            src="/images/intro/48383268586_ebff6f48a7_k_2_ippfgz_c_scale,w_931.jpg"
+            alt="Team picture at Open Summer of Code" />
+        </picture>
+      </div>
+
+    </div>
   </div>
-</header>
+</div>

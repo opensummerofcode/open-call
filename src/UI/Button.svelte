@@ -12,10 +12,11 @@
     padding: 0.8rem 1.6rem;
     border-radius: 0.4rem;
     font-weight: bold;
+    background-color: var(--color-light-blue);
   }
 
   .primary {
-    background-color: var(--color-light-blue);
+    background-color: var(--color-red);
   }
 
   .capitalize {
