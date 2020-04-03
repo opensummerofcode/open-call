@@ -1,9 +1,12 @@
+import { segment } from '../stores/nav';
+
 export default (node) => {
   let location;
 
   const navigate = function (e) {
     e.preventDefault();
     location = this.getAttribute('href');
+    segment.set(location);
     if (location === '#intro') {
       history.replaceState(null, null, '/');
       return window.scroll({ top: 0, left: 0, behavior: 'smooth' });

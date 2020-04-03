@@ -1,6 +1,6 @@
 <script>
   import { onMount } from 'svelte';
-  import { Button } from './UI';
+  import { Button, NavLink } from './UI';
 
   let header;
   let scrollY;
@@ -28,20 +28,20 @@
     <ul>
       <li class="title">
         <h1>
-          <a href="#intro">Open Call #osoc20</a>
+          <NavLink href="#intro">Open Call #osoc20</NavLink>
         </h1>
       </li>
       <li>
-        <a href="#about">About</a>
+        <NavLink href="#about">About</NavLink>
       </li>
       <li>
-        <a href="#topics">Topics</a>
+        <NavLink href="#topics">Topics</NavLink>
       </li>
       <li>
-        <a href="#timeline">Timeline</a>
+        <NavLink href="#timeline">Timeline</NavLink>
       </li>
       <li>
-        <a href="#faq">FAQ</a>
+        <NavLink href="#faq" }>FAQ</NavLink>
       </li>
     </ul>
     <ul>
@@ -55,18 +55,18 @@
 <style>
   header {
     width: 100%;
-    height: var(--height-header);
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 100;
-    background: transparent;
-    --nav-color: var(--color-white);
-    color: var(--nav-color);
+    height: var(--height-header);
     /* setting this allows us to transition height */
     max-height: var(--height-header);
+    z-index: 100;
+    color: var(--nav-color);
+    background: transparent;
     overflow: hidden;
     transition: 0.3s all ease;
+    --nav-color: var(--color-white);
   }
 
   .fixed {
@@ -108,36 +108,6 @@
     margin: 0;
     letter-spacing: 0.2rem;
     margin-right: 3rem;
-  }
-
-  a {
-    color: var(--nav-color);
-    outline-offset: 1rem;
-  }
-
-  a,
-  a:visited,
-  a:active,
-  a:hover {
-    text-decoration: none;
-  }
-
-  a:after {
-    background: none repeat scroll 0 0 transparent;
-    bottom: -0.4rem;
-    content: '';
-    display: block;
-    height: 2px;
-    left: 50%;
-    position: absolute;
-    background: var(--nav-color);
-    transition: width 0.3s ease 0s, left 0.3s ease 0s;
-    width: 0;
-  }
-
-  a:hover:after {
-    width: 100%;
-    left: 0;
   }
 
   h1 {
