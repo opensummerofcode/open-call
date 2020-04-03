@@ -21,14 +21,15 @@
   let icon = icons[name];
 </script>
 
+<i class="icon">
+  <Icon {icon} />
+</i>
+
 <style>
   .icon {
     display: inline-flex;
     align-items: center;
+    line-height: 1.6;
     height: 100%;
   }
 </style>
-
-<i class="icon">
-  <Icon {icon} />
-</i>

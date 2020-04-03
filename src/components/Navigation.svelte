@@ -6,24 +6,25 @@
   let scrollY;
 
   let fixed;
+  let small = true;
+
   let initialHeight;
 
   onMount(() => {
-    initialHeight = getComputedStyle(document.documentElement).getPropertyValue(
-      '--height-header'
-    );
+    initialHeight = header.offsetHeight;
+    console.log(initialHeight);
   });
 
-  $: console.log(initialHeight);
+  $: if (header && scrollY > 0) fixed = true;
+  else fixed = false;
 
-  $: if (header && scrollY > 0) {
-    fixed = true;
-  } else fixed = false;
+  $: if (header && scrollY > initialHeight / 2) small = true;
+  else small = false;
 </script>
 
 <svelte:window bind:scrollY />
 
-<header bind:this={header} class:fixed>
+<header bind:this={header} class:fixed class:small>
   <nav>
     <ul>
       <li class="title">
@@ -63,6 +64,9 @@
     background: transparent;
     --nav-color: var(--color-white);
     color: var(--nav-color);
+    /* setting this allows us to transition height */
+    max-height: var(--height-header);
+    overflow: hidden;
     transition: 0.3s all ease;
   }
 
@@ -70,6 +74,11 @@
     position: fixed;
     --nav-color: var(--color-dark-blue);
     background-color: var(--color-white);
+    box-shadow: 4px 0 20px -5px rgba(0, 0, 0, 0.2);
+  }
+
+  .small {
+    max-height: var(--height-header-scroll);
   }
 
   nav {
