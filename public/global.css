@@ -77,7 +77,7 @@ a,
 a:visited,
 a:active,
 a:hover {
-  color: var(--color-light-blue);
+  color: var(--color-red);
 }
 
 input,
