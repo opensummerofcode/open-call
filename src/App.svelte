@@ -3,6 +3,7 @@
 
   import Navigation from './Navigation.svelte';
   import Introduction from './Introduction.svelte';
+  import About from './About.svelte';
 
   import addAnalytics from './analytics';
 
@@ -16,8 +17,9 @@
 
 <div>
   <Navigation />
+  <!-- id is to make navigation skippable by screen readers -->
   <main id="main-content">
     <Introduction />
-    <p>Some more content</p>
+    <About />
   </main>
 </div>

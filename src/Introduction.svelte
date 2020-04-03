@@ -16,7 +16,6 @@
     position: absolute;
     top: 0;
     left: 0;
-    color: var(--color-white);
     padding-top: var(--height-nav);
     z-index: 10;
   }
@@ -36,6 +35,7 @@
   h2 {
     margin: 0;
     font-size: 4rem;
+    color: var(--color-white);
   }
 
   .container {
@@ -48,6 +48,7 @@
 
   .content {
     width: 40rem;
+    color: var(--color-white);
   }
 
   .image-container {
@@ -119,7 +120,7 @@
             images/intro/intro_w0rohr_c_scale,w_681.jpg 681w,
             images/intro/intro_w0rohr_c_scale,w_847.jpg 847w,
             images/intro/intro_w0rohr_c_scale,w_1001.jpg 1001w"
-            alt="" />
+            alt="Focused students thinking of solutions" />
         </picture>
 
       </div>

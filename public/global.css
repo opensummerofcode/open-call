@@ -12,7 +12,7 @@
 
 :root {
   --color-white: #fff;
-  --color-off-white: #f9f9f9;
+  --color-off-white: #f1f3f8;
   --color-black: #000;
   --color-light-blue: #09c;
   --color-dark-blue: #1e1d36;
@@ -61,6 +61,9 @@ h2 {
   text-transform: uppercase;
   font-weight: 900;
   line-height: 1.6;
+  font-size: 4rem;
+  margin: 0;
+  color: var(--color-dark-blue);
 }
 
 p,

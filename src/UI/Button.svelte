@@ -17,7 +17,7 @@
     cursor: pointer;
     border: 2px solid transparent;
     transition: all 300ms;
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     text-align: center;
   }
 
