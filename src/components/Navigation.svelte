@@ -12,7 +12,6 @@
 
   onMount(() => {
     initialHeight = header.offsetHeight;
-    console.log(initialHeight);
   });
 
   $: if (header && scrollY > 0) fixed = true;
@@ -57,7 +56,7 @@
   header {
     width: 100%;
     height: var(--height-header);
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     z-index: 100;
@@ -71,7 +70,6 @@
   }
 
   .fixed {
-    position: fixed;
     --nav-color: var(--color-dark-blue);
     background-color: var(--color-white);
     box-shadow: 4px 0 20px -5px rgba(0, 0, 0, 0.2);
@@ -114,6 +112,7 @@
 
   a {
     color: var(--nav-color);
+    outline-offset: 1rem;
   }
 
   a,
