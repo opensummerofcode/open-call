@@ -1,7 +1,7 @@
 <script>
   export let icon;
 
-  import { Icon } from '../UI';
+  import { Icon } from './UI';
 </script>
 
 <style>

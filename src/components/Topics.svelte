@@ -1,5 +1,5 @@
 <script>
-  import Topic from './components/Topic.svelte';
+  import Topic from './Topic.svelte';
 </script>
 
 <style>

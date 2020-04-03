@@ -6,7 +6,7 @@
   import About from './About.svelte';
   import Topics from './Topics.svelte';
 
-  import addAnalytics from './util/analytics';
+  import addAnalytics from '../analytics';
 
   smoothscroll.polyfill();
   if (process.env.production) addAnalytics();
