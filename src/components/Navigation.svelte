@@ -1,37 +1,9 @@
 <script>
   import { Button } from './UI';
-
-  let location;
-
-  const navigate = function (e) {
-    e.preventDefault();
-    location = this.getAttribute('href');
-    if (location === '#intro') {
-      return window.scroll({ top: 0, left: 0, behavior: 'smooth' });
-    }
-
-    const target = document.querySelector(location);
-    if (!target) return;
-    return target.scrollIntoView({ behavior: 'smooth' });
-  };
-
-  const navigable = (node) => {
-    const links = [];
-    node.querySelectorAll('a[href^="#"]').forEach((link) => {
-      link.addEventListener('click', navigate);
-      links.push(link);
-    });
-
-    return {
-      destroy() {
-        links.forEach((link) => link.removeEventListener('click', navigate));
-      }
-    };
-  };
 </script>
 
 <header>
-  <nav use:navigable on:navigate={navigate}>
+  <nav>
     <ul>
       <li class="title">
         <h1>
