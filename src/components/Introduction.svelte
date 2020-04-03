@@ -15,7 +15,7 @@
           <Icon name="clock" />
           Applications are open until May 8, 2020.
         </p>
-        <Button outline capitalize>Discover topics</Button>
+        <Button href="#topics" outline capitalize>Discover topics</Button>
       </section>
 
       <div class="image-container">

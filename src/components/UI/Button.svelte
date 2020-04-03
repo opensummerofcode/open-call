@@ -6,7 +6,18 @@
   export let outline = false;
 </script>
 
+{#if href}
+  <a {href} class:outline class:primary class:capitalize>
+    <slot />
+  </a>
+{:else}
+  <button class:outline class:primary class:capitalize {type}>
+    <slot />
+  </button>
+{/if}
+
 <style>
+  a,
   button {
     color: var(--color-white);
     border: 0;
@@ -19,6 +30,11 @@
     transition: all 300ms;
     font-size: 1.6rem;
     text-align: center;
+  }
+
+  a {
+    text-decoration: none;
+    display: inline-block;
   }
 
   .primary {
@@ -39,13 +55,3 @@
     color: var(--color-dark-blue);
   }
 </style>
-
-{#if href}
-  <a {href} class:outline class:primary class:capitalize>
-    <slot />
-  </a>
-{:else}
-  <button class:outline class:primary class:capitalize {type}>
-    <slot />
-  </button>
-{/if}
