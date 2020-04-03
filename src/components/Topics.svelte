@@ -2,41 +2,6 @@
   import Topic from './Topic.svelte';
 </script>
 
-<style>
-  .background-wrapper {
-    background: var(--color-off-white);
-    padding: 5rem 0;
-    margin-top: 10rem;
-  }
-
-  h3 {
-    margin: 0;
-    font-family: var(--font-copy);
-    font-size: 2rem;
-  }
-
-  .content-wrapper {
-    display: flex;
-    margin-top: 6rem;
-  }
-
-  .content {
-    flex: 1;
-  }
-
-  .topics {
-    display: grid;
-    flex: 1.2;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    grid-column-gap: 2rem;
-    grid-row-gap: 5rem;
-    margin-top: 2rem;
-    margin-right: 3rem;
-    line-height: 1.2;
-  }
-</style>
-
 <div class="background-wrapper">
   <section id="topics" class="container">
     <h2>Systemic challenges, concrete solutions</h2>
@@ -73,3 +38,38 @@
     </div>
   </section>
 </div>
+
+<style>
+  .background-wrapper {
+    background: var(--color-off-white);
+    padding: 5rem 0;
+    margin-top: 10rem;
+  }
+
+  h3 {
+    margin: 0;
+    font-family: var(--font-copy);
+    font-size: 2rem;
+  }
+
+  .content-wrapper {
+    display: flex;
+    margin-top: 6rem;
+  }
+
+  .content {
+    flex: 1;
+  }
+
+  .topics {
+    display: grid;
+    flex: 1.2;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 2rem;
+    grid-row-gap: 5rem;
+    margin-top: 2rem;
+    margin-right: 3rem;
+    line-height: 1.2;
+  }
+</style>

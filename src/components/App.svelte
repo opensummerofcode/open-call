@@ -12,10 +12,6 @@
   if (process.env.production) addAnalytics();
 </script>
 
-<style>
-
-</style>
-
 <div>
   <Navigation />
   <!-- id is to make navigation skippable by screen readers -->
@@ -25,3 +21,7 @@
     <Topics />
   </main>
 </div>
+
+<style>
+
+</style>

@@ -3,7 +3,7 @@
 
   let location;
 
-  const navigate = function(e) {
+  const navigate = function (e) {
     e.preventDefault();
     location = this.getAttribute('href');
     if (location === '#intro') {
@@ -15,20 +15,49 @@
     return target.scrollIntoView({ behavior: 'smooth' });
   };
 
-  const navigable = node => {
+  const navigable = (node) => {
     const links = [];
-    node.querySelectorAll('a[href^="#"]').forEach(link => {
+    node.querySelectorAll('a[href^="#"]').forEach((link) => {
       link.addEventListener('click', navigate);
       links.push(link);
     });
 
     return {
       destroy() {
-        links.forEach(link => link.removeEventListener('click', navigate));
+        links.forEach((link) => link.removeEventListener('click', navigate));
       }
     };
   };
 </script>
+
+<header>
+  <nav use:navigable on:navigate={navigate}>
+    <ul>
+      <li class="title">
+        <h1>
+          <a href="#intro">Open Call #osoc20</a>
+        </h1>
+      </li>
+      <li>
+        <a href="#about">About</a>
+      </li>
+      <li>
+        <a href="#topics">Topics</a>
+      </li>
+      <li>
+        <a href="#timeline">Timeline</a>
+      </li>
+      <li>
+        <a href="#faq">FAQ</a>
+      </li>
+    </ul>
+    <ul>
+      <li>
+        <Button capitalize>Submit proposal</Button>
+      </li>
+    </ul>
+  </nav>
+</header>
 
 <style>
   header {
@@ -110,32 +139,3 @@
     margin: 0;
   }
 </style>
-
-<header>
-  <nav use:navigable on:navigate={navigate}>
-    <ul>
-      <li class="title">
-        <h1>
-          <a href="#intro">Open Call #osoc20</a>
-        </h1>
-      </li>
-      <li>
-        <a href="#about">About</a>
-      </li>
-      <li>
-        <a href="#topics">Topics</a>
-      </li>
-      <li>
-        <a href="#timeline">Timeline</a>
-      </li>
-      <li>
-        <a href="#faq">FAQ</a>
-      </li>
-    </ul>
-    <ul>
-      <li>
-        <Button capitalize>Submit proposal</Button>
-      </li>
-    </ul>
-  </nav>
-</header>

@@ -4,6 +4,13 @@
   import { Icon } from './UI';
 </script>
 
+<article>
+  <div>
+    <Icon name={icon} />
+  </div>
+  <slot />
+</article>
+
 <style>
   article {
     background-color: var(--color-white);
@@ -49,10 +56,3 @@
     background-color: var(--color-white);
   }
 </style>
-
-<article>
-  <div>
-    <Icon name={icon} />
-  </div>
-  <slot />
-</article>

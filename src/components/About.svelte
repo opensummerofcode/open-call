@@ -1,24 +1,3 @@
-<style>
-  section {
-    margin-top: 10rem;
-  }
-
-  [data-tooltip] {
-    font-weight: bold;
-  }
-
-  p {
-    width: 60%;
-    max-width: 80rem;
-  }
-
-  @media screen and (max-width: 768px) {
-    p {
-      width: 100%;
-    }
-  }
-</style>
-
 <section id="about" class="container">
   <h2>About this call</h2>
   <p class="intro-text">
@@ -75,3 +54,24 @@
     learning from project proposal to real-world prototype.
   </p>
 </section>
+
+<style>
+  section {
+    margin-top: 10rem;
+  }
+
+  [data-tooltip] {
+    font-weight: bold;
+  }
+
+  p {
+    width: 60%;
+    max-width: 80rem;
+  }
+
+  @media screen and (max-width: 768px) {
+    p {
+      width: 100%;
+    }
+  }
+</style>
