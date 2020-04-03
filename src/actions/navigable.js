@@ -5,9 +5,11 @@ export default (node) => {
     e.preventDefault();
     location = this.getAttribute('href');
     if (location === '#intro') {
+      history.replaceState(null, null, '/');
       return window.scroll({ top: 0, left: 0, behavior: 'smooth' });
     }
 
+    history.replaceState(null, location.substring(1), location);
     const target = document.querySelector(location);
     if (!target) return;
     return target.scrollIntoView({ behavior: 'smooth' });
