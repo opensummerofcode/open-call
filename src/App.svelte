@@ -4,6 +4,7 @@
   import Navigation from './Navigation.svelte';
   import Introduction from './Introduction.svelte';
   import About from './About.svelte';
+  import Topics from './Topics.svelte';
 
   import addAnalytics from './util/analytics';
 
@@ -21,5 +22,6 @@
   <main id="main-content">
     <Introduction />
     <About />
+    <Topics />
   </main>
 </div>

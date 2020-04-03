@@ -79,6 +79,13 @@
     font-weight: bolder;
   }
 
+  a,
+  a:visited,
+  a:active,
+  a:hover {
+    text-decoration: none;
+  }
+
   a:after {
     background: none repeat scroll 0 0 transparent;
     bottom: -0.4rem;
