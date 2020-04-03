@@ -1,8 +1,29 @@
 <script>
+  import { onMount } from 'svelte';
   import { Button } from './UI';
+
+  let header;
+  let scrollY;
+
+  let fixed;
+  let initialHeight;
+
+  onMount(() => {
+    initialHeight = getComputedStyle(document.documentElement).getPropertyValue(
+      '--height-header'
+    );
+  });
+
+  $: console.log(initialHeight);
+
+  $: if (header && scrollY > 0) {
+    fixed = true;
+  } else fixed = false;
 </script>
 
-<header>
+<svelte:window bind:scrollY />
+
+<header bind:this={header} class:fixed>
   <nav>
     <ul>
       <li class="title">
@@ -34,7 +55,7 @@
 <style>
   header {
     width: 100%;
-    height: var(--height-nav);
+    height: var(--height-header);
     position: absolute;
     top: 0;
     left: 0;
@@ -42,6 +63,13 @@
     background: transparent;
     --nav-color: var(--color-white);
     color: var(--nav-color);
+    transition: 0.3s all ease;
+  }
+
+  .fixed {
+    position: fixed;
+    --nav-color: var(--color-dark-blue);
+    background-color: var(--color-white);
   }
 
   nav {
@@ -63,7 +91,7 @@
 
   li {
     list-style-type: none;
-    margin-left: 3rem;
+    margin-left: 3.6rem;
     font-size: 1.8rem;
     position: relative;
   }
@@ -77,7 +105,6 @@
 
   a {
     color: var(--nav-color);
-    font-weight: bolder;
   }
 
   a,
@@ -109,5 +136,6 @@
     text-transform: uppercase;
     font-size: 2.5rem;
     margin: 0;
+    font-weight: bold;
   }
 </style>

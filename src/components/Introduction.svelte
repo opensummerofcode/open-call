@@ -74,7 +74,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    padding-top: var(--height-nav);
+    padding-top: var(--height-header);
     z-index: 10;
   }
 
