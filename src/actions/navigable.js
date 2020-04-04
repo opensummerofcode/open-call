@@ -1,4 +1,4 @@
-import { segment } from '../stores/nav';
+import { segment, isMobileNavShown } from '../stores/nav';
 
 export default (node) => {
   let location;
@@ -7,6 +7,7 @@ export default (node) => {
     e.preventDefault();
     location = this.getAttribute('href');
     segment.set(location);
+    isMobileNavShown.set(false);
     if (location === '#intro') {
       history.replaceState(null, null, '/');
       return window.scroll({ top: 0, left: 0, behavior: 'smooth' });

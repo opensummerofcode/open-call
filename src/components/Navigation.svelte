@@ -1,8 +1,7 @@
 <script>
-  import { onMount } from 'svelte';
+  import { onMount, onDestroy } from 'svelte';
+  import { isMobileNavShown } from '../stores/nav';
   import { Button, NavLink, Hamburger } from './UI';
-
-  let mobileNavShown = false;
 
   /* any transition or animation to do with sizing will trigger on page load and browser
    resize, we don't want that */
@@ -16,14 +15,13 @@
     }, 400);
   };
 
+  // sizing & positioning
   let header;
   let initialHeight;
   onMount(() => {
     initialHeight = header.offsetHeight;
     setTimeout(() => (domIsAnimationReady = true), 550);
   });
-
-  const toggleNav = () => (mobileNavShown = !mobileNavShown);
 
   let scrollY;
   let fixed;
@@ -35,6 +33,15 @@
   $: if (header && scrollY > initialHeight / 2) {
     small = true;
   } else small = false;
+
+  let mobileNavShown;
+  const unsubscribe = isMobileNavShown.subscribe(value => {
+    console.log(value);
+    mobileNavShown = value;
+  });
+  onDestroy(unsubscribe);
+
+  const toggleNav = () => isMobileNavShown.set(!mobileNavShown);
 </script>
 
 <svelte:window bind:scrollY on:resize={preventAnimation} />
