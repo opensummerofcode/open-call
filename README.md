@@ -26,7 +26,7 @@ By default, the server will only respond to requests from localhost. To allow co
 To create an optimised version of the site:
 
 ```bash
-npm run build
+yarn run build
 ```
 
 You can run the newly built site with `yarn start`. This uses [sirv](https://github.com/lukeed/sirv), which is included in our package.json's `dependencies` so that the site will work when you deploying to platforms like [Heroku](https://heroku.com).
