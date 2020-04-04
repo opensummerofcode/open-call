@@ -13,6 +13,7 @@
     color: var(--nav-color);
     /* this is fine since focus styles are applied for tab indexing */
     outline: 0;
+    transition: color 0.3s ease;
   }
 
   a,
@@ -40,5 +41,17 @@
   a:hover:after {
     width: 100%;
     left: 0;
+  }
+
+  @media (max-width: 1024px) {
+    a:after {
+      display: none;
+    }
+
+    a.active,
+    a:focus,
+    a:hover {
+      color: var(--color-light-blue);
+    }
   }
 </style>

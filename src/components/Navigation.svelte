@@ -2,21 +2,32 @@
   import { onMount } from 'svelte';
   import { Button, NavLink, Hamburger } from './UI';
 
-  let header;
-  let scrollY;
-
-  let fixed;
   let mobileNavShown = false;
-  let small = true;
 
+  /* any transition or animation to do with sizing will trigger on page load and browser
+   resize, we don't want that */
+  let domIsAnimationReady = false;
+  let resizeTimer;
+  const preventAnimation = () => {
+    domIsAnimationReady = false;
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+      domIsAnimationReady = true;
+    }, 400);
+  };
+
+  let header;
   let initialHeight;
-
   onMount(() => {
     initialHeight = header.offsetHeight;
+    setTimeout(() => (domIsAnimationReady = true), 550);
   });
 
   const toggleNav = () => (mobileNavShown = !mobileNavShown);
 
+  let scrollY;
+  let fixed;
+  let small = true;
   $: if (header && scrollY > 0) {
     fixed = true;
   } else fixed = false;
@@ -26,14 +37,14 @@
   } else small = false;
 </script>
 
-<svelte:window bind:scrollY />
+<svelte:window bind:scrollY on:resize={preventAnimation} />
 
 <header bind:this={header} class:fixed class:small>
   <nav class:open={mobileNavShown}>
     <h1>
       <NavLink href="#intro">Open Call #osoc20</NavLink>
     </h1>
-    <ul>
+    <ul class:transitionable={domIsAnimationReady}>
       <li>
         <NavLink href="#about">About</NavLink>
       </li>
@@ -74,7 +85,7 @@
   .fixed {
     --nav-color: var(--color-dark-blue);
     background-color: var(--color-white);
-    box-shadow: 4px 0 20px -5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0.4rem 0 2rem -0.5rem rgba(0, 0, 0, 0.2);
   }
 
   .small {
@@ -119,5 +130,48 @@
     margin-right: 1rem;
     position: relative;
     white-space: nowrap;
+  }
+
+  @media (max-width: 1024px) {
+    ul {
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 30rem;
+      height: 100vh;
+      padding: 0 3rem;
+      padding-top: 8rem;
+      background: var(--color-white);
+      list-style-type: none;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      z-index: 110;
+      --nav-color: var(--color-dark-blue);
+
+      /* stop text flickering in chromium browsers */
+      -webkit-font-smoothing: antialiased;
+
+      transform-origin: 0% 0%;
+      transform: translate(100%, 0);
+    }
+
+    ul.transitionable {
+      transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+    }
+
+    .open ul {
+      transform: scale(1, 1);
+      opacity: 1;
+    }
+
+    li {
+      margin-left: 0;
+      margin-bottom: 3rem;
+    }
+
+    li.right {
+      margin-left: 0;
+    }
   }
 </style>

@@ -9,13 +9,14 @@
 <style>
   button {
     display: none;
-    z-index: 110;
+    z-index: 120;
     border: 0;
     cursor: pointer;
     background: transparent;
     outline-offset: 0.5rem;
     height: 4rem;
     user-select: none;
+    margin-left: auto;
   }
 
   span {
