@@ -1,10 +1,14 @@
 <script>
   export let href;
+  export let isInDrawer = true;
 
   import { segment } from '../../stores/nav';
 </script>
 
-<a {href} class:active={$segment === href}>
+<a
+  {href}
+  class:mobile-nav-link={isInDrawer}
+  class:active={isInDrawer && $segment === href}>
   <slot />
 </a>
 
@@ -44,13 +48,13 @@
   }
 
   @media (max-width: 1024px) {
-    a:after {
+    .mobile-nav-link:after {
       display: none;
     }
 
-    a.active,
-    a:focus,
-    a:hover {
+    .mobile-nav-link.active,
+    .mobile-nav-link:focus,
+    .mobile-nav-link:hover {
       color: var(--color-light-blue);
     }
   }

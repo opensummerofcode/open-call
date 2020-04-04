@@ -36,7 +36,6 @@
 
   let mobileNavShown;
   const unsubscribe = isMobileNavShown.subscribe(value => {
-    console.log(value);
     mobileNavShown = value;
   });
   onDestroy(unsubscribe);
@@ -49,7 +48,7 @@
 <header bind:this={header} class:fixed class:small>
   <nav class:open={mobileNavShown}>
     <h1>
-      <NavLink href="#intro">Open Call #osoc20</NavLink>
+      <NavLink href="#intro" isInDrawer={false}>Open Call #osoc20</NavLink>
     </h1>
     <ul class:transitionable={domIsAnimationReady}>
       <li>
