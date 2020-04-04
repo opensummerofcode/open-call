@@ -112,6 +112,7 @@
   .image-container {
     width: 54rem;
     border-top-left-radius: 20rem;
+    box-shadow: 0 30px 100px -20px rgba(0, 0, 0, 0.4);
     overflow: hidden;
   }
 

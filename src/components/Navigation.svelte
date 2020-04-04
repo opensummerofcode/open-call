@@ -1,11 +1,12 @@
 <script>
   import { onMount } from 'svelte';
-  import { Button, NavLink } from './UI';
+  import { Button, NavLink, Hamburger } from './UI';
 
   let header;
   let scrollY;
 
   let fixed;
+  let mobileNavShown = false;
   let small = true;
 
   let initialHeight;
@@ -14,23 +15,25 @@
     initialHeight = header.offsetHeight;
   });
 
-  $: if (header && scrollY > 0) fixed = true;
-  else fixed = false;
+  const toggleNav = () => (mobileNavShown = !mobileNavShown);
 
-  $: if (header && scrollY > initialHeight / 2) small = true;
-  else small = false;
+  $: if (header && scrollY > 0) {
+    fixed = true;
+  } else fixed = false;
+
+  $: if (header && scrollY > initialHeight / 2) {
+    small = true;
+  } else small = false;
 </script>
 
 <svelte:window bind:scrollY />
 
 <header bind:this={header} class:fixed class:small>
-  <nav>
+  <nav class:open={mobileNavShown}>
+    <h1>
+      <NavLink href="#intro">Open Call #osoc20</NavLink>
+    </h1>
     <ul>
-      <li class="title">
-        <h1>
-          <NavLink href="#intro">Open Call #osoc20</NavLink>
-        </h1>
-      </li>
       <li>
         <NavLink href="#about">About</NavLink>
       </li>
@@ -41,14 +44,13 @@
         <NavLink href="#timeline">Timeline</NavLink>
       </li>
       <li>
-        <NavLink href="#faq" }>FAQ</NavLink>
+        <NavLink href="#faq">FAQ</NavLink>
       </li>
-    </ul>
-    <ul>
-      <li>
+      <li class="right">
         <Button capitalize>Submit proposal</Button>
       </li>
     </ul>
+    <Hamburger isOpen={mobileNavShown} on:click={toggleNav} />
   </nav>
 </header>
 
@@ -59,7 +61,7 @@
     top: 0;
     left: 0;
     height: var(--height-header);
-    /* setting this allows us to transition height */
+    /* max-height is transitionable whereas height is not */
     max-height: var(--height-header);
     z-index: 100;
     color: var(--nav-color);
@@ -84,36 +86,38 @@
     height: 100%;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 0 8rem;
+    padding: 0 5rem;
   }
 
   ul {
     padding: 0;
     margin: 0;
     height: 100%;
+    width: 100%;
     display: flex;
+    justify-content: flex-start;
     align-items: center;
   }
 
   li {
     list-style-type: none;
-    margin-left: 3.6rem;
+    margin-left: 3rem;
     font-size: 1.8rem;
     position: relative;
   }
 
-  li.title {
-    justify-self: flex-start;
-    margin: 0;
-    letter-spacing: 0.2rem;
-    margin-right: 3rem;
+  li.right {
+    margin-left: auto;
   }
 
   h1 {
     text-transform: uppercase;
     font-size: 2.5rem;
-    margin: 0;
     font-weight: bold;
+    margin: 0;
+    letter-spacing: 0.2rem;
+    margin-right: 1rem;
+    position: relative;
+    white-space: nowrap;
   }
 </style>

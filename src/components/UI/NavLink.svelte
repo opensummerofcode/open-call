@@ -2,11 +2,9 @@
   export let href;
 
   import { segment } from '../../stores/nav';
-
-  $: console.log($segment);
 </script>
 
-<a {href} class={$segment === href ? 'active' : ''}>
+<a {href} class:active={$segment === href}>
   <slot />
 </a>
 
