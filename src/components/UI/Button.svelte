@@ -4,10 +4,12 @@
   export let primary = false;
   export let capitalize = false;
   export let outline = false;
+
+  export let target = null;
 </script>
 
 {#if href}
-  <a {href} class:outline class:primary class:capitalize>
+  <a {href} {target} class:outline class:primary class:capitalize>
     <slot />
   </a>
 {:else}

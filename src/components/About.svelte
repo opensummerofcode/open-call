@@ -23,7 +23,9 @@
   </p>
   <p>
     You’re strongly encouraged to
-    <a href="">submit your open source project proposal</a>
+    <a href="https://osoc.typeform.com/to/tGnsYT" target="blank">
+      submit your open source project proposal
+    </a>
     that fits with one of the topics before Friday 8 May 2020. If your proposal
     gets selected by the jury, you’ll get the opportunity to
     <strong>

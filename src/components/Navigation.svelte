@@ -58,7 +58,12 @@
         <NavLink href="#faq">FAQ</NavLink>
       </li>
       <li class="right">
-        <Button capitalize>Submit proposal</Button>
+        <Button
+          href="https://osoc.typeform.com/to/tGnsYT"
+          target="blank"
+          capitalize>
+          Submit proposal
+        </Button>
       </li>
     </ul>
     <Hamburger isOpen={mobileNavShown} on:click={toggleNav} />
