@@ -14,6 +14,7 @@
     cursor: pointer;
     background: transparent;
     outline-offset: 0.5rem;
+    outline-color: var(--color-light-blue);
     height: 4rem;
     user-select: none;
     margin-left: auto;
