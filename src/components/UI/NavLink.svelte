@@ -2,13 +2,36 @@
   export let href;
   export let isInDrawer = true;
 
-  import { segment } from '../../stores/nav';
+  import { onMount } from 'svelte';
+  import { currentSegment } from '../../stores/nav';
+
+  let scrollY;
+  let targetIsInView = false;
+
+  let link;
+  let target;
+  onMount(() => {
+    target = document.querySelector(link.getAttribute('href'));
+    console.log(target);
+  });
+
+  $: if (
+    target &&
+    link &&
+    target.offsetTop <= scrollY &&
+    target.offsetTop + target.offsetHeight > scrollY
+  ) {
+    targetIsInView = true;
+  } else targetIsInView = false;
 </script>
+
+<svelte:window bind:scrollY />
 
 <a
   {href}
+  bind:this={link}
   class:mobile-nav-link={isInDrawer}
-  class:active={isInDrawer && $segment === href}>
+  class:active={isInDrawer && ($currentSegment === href && targetIsInView)}>
   <slot />
 </a>
 

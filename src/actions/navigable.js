@@ -1,4 +1,4 @@
-import { segment, isMobileNavShown } from '../stores/nav';
+import { currentSegment, isMobileNavShown } from '../stores/nav';
 
 export default (node) => {
   let location;
@@ -6,7 +6,7 @@ export default (node) => {
   const navigate = function (e) {
     e.preventDefault();
     location = this.getAttribute('href');
-    segment.set(location);
+    currentSegment.set(location);
     isMobileNavShown.set(false);
     if (location === '#intro') {
       history.replaceState(null, null, '/');
