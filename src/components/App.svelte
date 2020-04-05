@@ -6,15 +6,13 @@
   import About from './About.svelte';
   import Topics from './Topics.svelte';
 
-  import navigable from '../actions/navigable';
-
   import addAnalytics from '../analytics';
 
   smoothscroll.polyfill();
   if (process.env.production) addAnalytics();
 </script>
 
-<div use:navigable>
+<div>
   <Navigation />
   <!-- id is to make navigation skippable by screen readers -->
   <main id="main-content">

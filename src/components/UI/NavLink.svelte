@@ -1,17 +1,19 @@
+<script context="module">
+  let shouldObserveScroll = true;
+</script>
+
 <script>
   export let href;
   export let isInDrawer = true;
 
   import { onMount, onDestroy } from 'svelte';
-  import { currentSegment } from '../../stores/nav';
+  import { currentSegment, isMobileNavShown } from '../../stores/nav';
 
   let scrollY;
 
-  let link;
   let target;
-  let targetIsInView = false;
   onMount(() => {
-    target = document.querySelector(link.getAttribute('href'));
+    target = document.querySelector(href);
   });
 
   let segment;
@@ -20,24 +22,55 @@
   });
   onDestroy(unsubscribe);
 
-  $: if (
-    target &&
-    link &&
-    target.offsetTop <= scrollY + 66 &&
-    target.offsetTop + target.offsetHeight > scrollY + 66
-  ) {
-    currentSegment.set(link.getAttribute('href'));
-    targetIsInView = true;
-  } else targetIsInView = false;
+  const navigate = function(e) {
+    e.preventDefault();
+
+    // nav-links should have their focus styles removed after click instantly
+    this.blur();
+
+    currentSegment.set(href);
+    isMobileNavShown.set(false);
+
+    shouldObserveScroll = false;
+    setTimeout(() => {
+      shouldObserveScroll = true;
+    }, 600);
+
+    if (href === '#intro') {
+      history.replaceState(null, null, '/');
+      return window.scroll({ top: 0, left: 0, behavior: 'smooth' });
+    }
+
+    history.replaceState(null, href.substring(1), href);
+    const target = document.querySelector(href);
+    if (!target) return;
+
+    const height = getComputedStyle(document.documentElement).getPropertyValue(
+      '--height-header-scroll'
+    );
+    const offset = parseFloat(height.replace('rem', '')) * 10;
+    const y = target.getBoundingClientRect().top + window.pageYOffset - offset;
+    return window.scrollTo({ top: y, behavior: 'smooth' });
+  };
+
+  const scroll = () => {
+    if (!shouldObserveScroll) return;
+    if (
+      target &&
+      target.offsetTop <= scrollY + 100 &&
+      target.offsetTop + target.offsetHeight > scrollY + 100
+    ) {
+      currentSegment.set(href);
+    }
+  };
 </script>
 
-<svelte:window bind:scrollY />
-
+<svelte:window bind:scrollY on:scroll={scroll} />
 <a
   {href}
-  bind:this={link}
+  on:click={navigate}
   class:mobile-nav-link={isInDrawer}
-  class:active={isInDrawer && segment === href && targetIsInView}>
+  class:active={isInDrawer && segment === href}>
   <slot />
 </a>
 

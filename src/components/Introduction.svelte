@@ -2,7 +2,7 @@
   import { Icon, Button } from './UI';
 </script>
 
-<div class="wrapper">
+<div id="intro" class="wrapper">
   <div class="background-wrapper">
     <div class="container">
       <section class="content">
