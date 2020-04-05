@@ -45,7 +45,7 @@
 
 <svelte:window bind:scrollY on:resize={preventAnimation} />
 
-<header bind:this={header} class:fixed class:small>
+<header id="app-header" bind:this={header} class:fixed class:small>
   <nav class:open={mobileNavShown}>
     <h1>
       <NavLink href="#intro" isInDrawer={false}>Open Call #osoc20</NavLink>

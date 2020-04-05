@@ -16,7 +16,13 @@ export default (node) => {
     history.replaceState(null, location.substring(1), location);
     const target = document.querySelector(location);
     if (!target) return;
-    return target.scrollIntoView({ behavior: 'smooth' });
+
+    const height = getComputedStyle(document.documentElement).getPropertyValue(
+      '--height-header-scroll'
+    );
+    const offset = parseFloat(height.replace('rem', '')) * 10;
+    const y = target.getBoundingClientRect().top + window.pageYOffset - offset;
+    return window.scrollTo({ top: y, behavior: 'smooth' });
   };
 
   const links = [];
