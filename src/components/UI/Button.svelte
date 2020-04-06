@@ -23,14 +23,14 @@
   button {
     color: var(--color-white);
     border: 0;
-    padding: 1.2rem 1.6rem;
+    padding: 0.8rem 1.4rem;
     border-radius: 0.4rem;
     font-weight: bold;
     background-color: var(--color-light-blue);
     cursor: pointer;
     border: 2px solid transparent;
     transition: all 300ms;
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     text-align: center;
   }
 

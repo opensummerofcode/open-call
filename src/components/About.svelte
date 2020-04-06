@@ -71,6 +71,12 @@
     max-width: 80rem;
   }
 
+  @media screen and (max-width: 1024px) {
+    section {
+      margin-top: 6rem;
+    }
+  }
+
   @media screen and (max-width: 768px) {
     p {
       width: 100%;

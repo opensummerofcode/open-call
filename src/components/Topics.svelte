@@ -70,6 +70,29 @@
     grid-row-gap: 5rem;
     margin-top: 2rem;
     margin-right: 3rem;
-    line-height: 1.2;
+  }
+
+  @media screen and (max-width: 1024px) {
+    .content-wrapper {
+      flex-direction: column-reverse;
+      margin-top: 2rem;
+    }
+    .content {
+      flex: auto;
+    }
+    .topics {
+      flex: auto;
+      margin-top: 4rem;
+    }
+    h2 {
+      font-size: 3.4rem;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    .topics {
+      grid-template-columns: repeat(1, 1fr);
+      grid-template-rows: repeat(4, 1fr);
+    }
   }
 </style>

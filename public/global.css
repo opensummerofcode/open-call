@@ -70,6 +70,12 @@ h2 {
   color: var(--color-dark-blue);
 }
 
+@media screen and (max-width: 1024px) {
+  h2 {
+    font-size: 3.4rem;
+  }
+}
+
 p,
 ul li,
 ol li {

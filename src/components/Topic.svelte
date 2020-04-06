@@ -14,16 +14,17 @@
 <style>
   article {
     background-color: var(--color-white);
-    padding: 0 4rem;
-    height: 14rem;
+    padding: 1rem 4rem 0;
+    height: 15rem;
     display: flex;
-    justify-items: center;
+    justify-content: center;
     align-items: center;
     text-align: center;
     position: relative;
     font-weight: bold;
     border-radius: 0.5rem;
     transition: 0.3s all ease;
+    line-height: 1.6;
   }
 
   article:hover,
