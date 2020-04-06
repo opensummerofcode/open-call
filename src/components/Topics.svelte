@@ -94,7 +94,7 @@
     }
   }
 
-  @media screen and (max-width: 480px) {
+  @media screen and (max-width: 520px) {
     .topics {
       grid-template-columns: repeat(1, 1fr);
       grid-template-rows: repeat(4, 1fr);

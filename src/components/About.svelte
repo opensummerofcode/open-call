@@ -1,4 +1,4 @@
-<section id="about" class="container">
+<section id="about" class="container site-section">
   <h2>About this call</h2>
   <p class="intro-text">
     The high level of civic engagement in the current COVID-19 crisis and the
@@ -58,10 +58,6 @@
 </section>
 
 <style>
-  section {
-    margin-top: 10rem;
-  }
-
   [data-tooltip] {
     font-weight: bold;
   }
@@ -69,12 +65,6 @@
   p {
     width: 60%;
     max-width: 80rem;
-  }
-
-  @media screen and (max-width: 1024px) {
-    section {
-      margin-top: 6rem;
-    }
   }
 
   @media screen and (max-width: 768px) {

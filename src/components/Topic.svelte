@@ -14,7 +14,7 @@
 <style>
   article {
     background-color: var(--color-white);
-    padding: 4rem 2rem;
+    padding: 4rem 3rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -56,5 +56,12 @@
   div:hover {
     color: var(--color-light-blue);
     background-color: var(--color-white);
+  }
+
+  @media screen and (max-width: 520px) {
+    article {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
   }
 </style>
