@@ -14,8 +14,7 @@
 <style>
   article {
     background-color: var(--color-white);
-    padding: 1rem 4rem 0;
-    height: 15rem;
+    padding: 4rem 2rem;
     display: flex;
     justify-content: center;
     align-items: center;

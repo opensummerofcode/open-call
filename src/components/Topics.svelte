@@ -61,6 +61,10 @@
     flex: 1;
   }
 
+  .content p {
+    max-width: 80rem;
+  }
+
   .topics {
     display: grid;
     flex: 1.2;
@@ -83,13 +87,14 @@
     .topics {
       flex: auto;
       margin-top: 4rem;
+      margin-right: 0;
     }
     h2 {
       font-size: 3.4rem;
     }
   }
 
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 480px) {
     .topics {
       grid-template-columns: repeat(1, 1fr);
       grid-template-rows: repeat(4, 1fr);
