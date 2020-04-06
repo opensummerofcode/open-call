@@ -51,7 +51,10 @@
     <h1>
       <NavLink href="#intro" isInDrawer={false}>Open Call #osoc20</NavLink>
     </h1>
-    <Hamburger isOpen={mobileNavShown} on:click={toggleNav} />
+    <Hamburger
+      isAtTop={scrollY === 0}
+      isOpen={mobileNavShown}
+      on:click={toggleNav} />
     <ul class:transitionable={domIsAnimationReady}>
       <li>
         <NavLink href="#about">About</NavLink>

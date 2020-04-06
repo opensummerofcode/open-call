@@ -1,8 +1,13 @@
 <script>
   export let isOpen = false;
+  export let isAtTop = true;
 </script>
 
-<button on:click class="hamburger" class:open={isOpen}>
+<button
+  on:click
+  class="hamburger"
+  class:is-at-top={isAtTop}
+  class:open={isOpen}>
   <span />
 </button>
 
@@ -68,10 +73,15 @@
   }
 
   @media screen and (max-width: 980px) {
-    span,
-    span:before,
-    span:after {
+    .is-at-top span,
+    .is-at-top span:before,
+    .is-at-top span:after {
       background: var(--color-white);
+    }
+
+    .open span:before,
+    .open span:after {
+      background: var(--color-dark-blue);
     }
   }
 </style>
