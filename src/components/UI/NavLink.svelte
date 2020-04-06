@@ -1,13 +1,9 @@
-<script context="module">
-  let shouldObserveScroll = true;
-</script>
-
 <script>
   export let href;
   export let isInDrawer = true;
 
   import { onMount, onDestroy } from 'svelte';
-  import { currentSegment, isMobileNavShown } from '../../stores/nav';
+  import { currentSegment, shouldObserveScroll } from '../../stores/nav';
 
   let scrollY;
 
@@ -22,39 +18,8 @@
   });
   onDestroy(unsubscribe);
 
-  const navigate = function(e) {
-    e.preventDefault();
-
-    // nav-links should have their focus styles removed after click instantly
-    this.blur();
-
-    currentSegment.set(href);
-    isMobileNavShown.set(false);
-
-    shouldObserveScroll = false;
-    setTimeout(() => {
-      shouldObserveScroll = true;
-    }, 600);
-
-    if (href === '#intro') {
-      history.replaceState(null, null, '/');
-      return window.scroll({ top: 0, left: 0, behavior: 'smooth' });
-    }
-
-    history.replaceState(null, href.substring(1), href);
-    const target = document.querySelector(href);
-    if (!target) return;
-
-    const height = getComputedStyle(document.documentElement).getPropertyValue(
-      '--height-header-scroll'
-    );
-    const offset = parseFloat(height.replace('rem', '')) * 10;
-    const y = target.getBoundingClientRect().top + window.pageYOffset - offset;
-    return window.scrollTo({ top: y, behavior: 'smooth' });
-  };
-
   const scroll = () => {
-    if (!shouldObserveScroll) return;
+    if (!$shouldObserveScroll) return;
     if (
       target &&
       target.offsetTop <= scrollY + 100 &&
@@ -68,7 +33,6 @@
 <svelte:window bind:scrollY on:scroll={scroll} />
 <a
   {href}
-  on:click={navigate}
   class:mobile-nav-link={isInDrawer}
   class:active={isInDrawer && segment === href}>
   <slot />
