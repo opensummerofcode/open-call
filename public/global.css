@@ -76,6 +76,10 @@ h2 {
   }
 }
 
+p {
+  max-width: 80rem;
+}
+
 p,
 ul li,
 ol li {

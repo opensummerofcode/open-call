@@ -61,10 +61,6 @@
     flex: 1;
   }
 
-  .content p {
-    max-width: 80rem;
-  }
-
   .topics {
     display: grid;
     flex: 1.2;

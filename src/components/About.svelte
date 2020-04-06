@@ -64,7 +64,6 @@
 
   p {
     width: 60%;
-    max-width: 80rem;
   }
 
   @media screen and (max-width: 768px) {
