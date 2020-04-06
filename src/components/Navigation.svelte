@@ -207,4 +207,14 @@
       margin-left: 0;
     }
   }
+
+  @media screen and (max-width: 425px) {
+    nav {
+      padding: 0 2rem;
+      justify-content: space-between;
+    }
+    nav :global(.hamburger) {
+      margin-left: 0;
+    }
+  }
 </style>

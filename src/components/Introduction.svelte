@@ -19,41 +19,9 @@
       </section>
 
       <div class="image-container">
-
-        <picture>
-          <source
-            media="(max-width: 767px)"
-            sizes="(max-width: 1380px) 100vw, 1380px"
-            srcset="
-            images/intro/intro_w0rohr_ar_1_1,c_fill,g_auto__c_scale,w_440.jpg
-            440w,
-            images/intro/intro_w0rohr_ar_1_1,c_fill,g_auto__c_scale,w_656.jpg
-            656w,
-            images/intro/intro_w0rohr_ar_1_1,c_fill,g_auto__c_scale,w_834.jpg
-            834w,
-            images/intro/intro_w0rohr_ar_1_1,c_fill,g_auto__c_scale,w_993.jpg
-            993w" />
-          <source
-            media="(min-width: 768px) and (max-width: 991px)"
-            sizes="(max-width: 1971px) 70vw, 1380px"
-            srcset="
-            images/intro/intro_w0rohr_ar_4_3,c_fill,g_auto__c_scale,w_538.jpg
-            538w,
-            images/intro/intro_w0rohr_ar_4_3,c_fill,g_auto__c_scale,w_721.jpg
-            721w,
-            images/intro/intro_w0rohr_ar_4_3,c_fill,g_auto__c_scale,w_881.jpg
-            881w,
-            images/intro/intro_w0rohr_ar_4_3,c_fill,g_auto__c_scale,w_1023.jpg
-            1023w" />
-          <img
-            sizes="(max-width: 3450px) 40vw, 1380px"
-            srcset=" images/intro/intro_w0rohr_c_scale,w_480.jpg 480w,
-            images/intro/intro_w0rohr_c_scale,w_681.jpg 681w,
-            images/intro/intro_w0rohr_c_scale,w_847.jpg 847w,
-            images/intro/intro_w0rohr_c_scale,w_1001.jpg 1001w"
-            alt="Focused students thinking of solutions" />
-        </picture>
-
+        <img
+          src="images/intro/intro.jpg"
+          alt="Team of hardworking innovators" />
       </div>
 
     </div>
@@ -110,14 +78,75 @@
   }
 
   .image-container {
-    width: 54rem;
+    width: 52rem;
     border-top-left-radius: 20rem;
     box-shadow: 0 30px 100px -20px rgba(0, 0, 0, 0.4);
     overflow: hidden;
   }
 
-  @media screen and (max-width: 76.8em) {
+  @media screen and (max-width: 1124px) {
     .image-container {
+      width: 45rem;
+    }
+  }
+
+  @media screen and (max-width: 980px) {
+    .container {
+      flex-direction: column;
+      margin-top: 5rem;
+      justify-content: flex-start;
+    }
+    .content {
+      margin-bottom: 4rem;
+      width: 48rem;
+    }
+    .background-wrapper::before {
+      width: 100%;
+    }
+    .image-container {
+      width: 48rem;
+    }
+  }
+
+  @media screen and (max-width: 582px) {
+    .content {
+      margin-bottom: 4rem;
+      width: 36rem;
+    }
+    .image-container {
+      border-top-left-radius: 15rem;
+      width: 36rem;
+    }
+    h2 {
+      font-size: 3rem;
+    }
+    .container {
+      margin-top: 3rem;
+    }
+    .background-wrapper::before {
+      border-bottom-right-radius: 14rem;
+    }
+  }
+
+  @media screen and (max-width: 425px) {
+    .content {
+      margin-bottom: 4rem;
+      width: 30rem;
+    }
+    .image-container {
+      border-top-left-radius: 10rem;
+      width: 30rem;
+    }
+  }
+
+  @media screen and (max-width: 380px) {
+    .content {
+      margin-bottom: 4rem;
+      width: 30rem;
+    }
+    .image-container {
+      border-top-left-radius: 10rem;
+      width: 30rem;
     }
   }
 

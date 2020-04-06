@@ -2,7 +2,7 @@
   export let isOpen = false;
 </script>
 
-<button on:click class={isOpen ? 'open' : ''}>
+<button on:click class="hamburger" class:open={isOpen}>
   <span />
 </button>
 
@@ -64,6 +64,14 @@
   @media (max-width: 1024px) {
     button {
       display: block;
+    }
+  }
+
+  @media screen and (max-width: 980px) {
+    span,
+    span:before,
+    span:after {
+      background: var(--color-white);
     }
   }
 </style>
