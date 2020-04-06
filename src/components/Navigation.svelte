@@ -46,6 +46,7 @@
 <svelte:window bind:scrollY on:resize={preventAnimation} />
 
 <header id="app-header" bind:this={header} class:fixed class:small>
+  <div class:shown={mobileNavShown} on:click={toggleNav} class="overlay" />
   <nav class:open={mobileNavShown}>
     <h1>
       <NavLink href="#intro" isInDrawer={false}>Open Call #osoc20</NavLink>
@@ -86,12 +87,32 @@
     height: var(--height-header);
     /* max-height is transitionable whereas height is not */
     max-height: var(--height-header);
-    z-index: 100;
+    z-index: 90;
     color: var(--nav-color);
     background: transparent;
     overflow: hidden;
     transition: 0.3s all ease;
     --nav-color: var(--color-white);
+  }
+
+  .overlay {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 200%;
+    left: -100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 100;
+    overflow: hidden;
+    text-align: center;
+    transition: top 0.3s, right 0.3s, bottom 0.3s, left 0.3s;
+  }
+
+  .overlay.shown {
+    right: 0;
+    left: 0;
   }
 
   .fixed {
