@@ -5,6 +5,7 @@
   import Introduction from './Introduction.svelte';
   import About from './About.svelte';
   import Topics from './Topics.svelte';
+  import Timeline from './Timeline.svelte';
   import FAQ from './FAQ.svelte';
 
   import navigable from '../actions/navigable';
@@ -22,6 +23,7 @@
     <Introduction />
     <About />
     <Topics />
+    <Timeline />
     <FAQ />
   </main>
 </div>
