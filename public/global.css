@@ -93,8 +93,15 @@ textarea {
 
 .container {
   --width-container: 1140px;
+  width: 90%;
   max-width: var(--width-container);
   margin: 0 auto;
+}
+
+@media screen and (max-width: 1024) {
+  .container {
+    --width-container: 90%;
+  }
 }
 
 /*
