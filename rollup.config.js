@@ -2,6 +2,7 @@ import svelte from 'rollup-plugin-svelte';
 import resolve from '@rollup/plugin-node-resolve';
 import replace from '@rollup/plugin-replace';
 import commonjs from '@rollup/plugin-commonjs';
+import svg from 'rollup-plugin-svg-import';
 import livereload from 'rollup-plugin-livereload';
 import { terser } from 'rollup-plugin-terser';
 
@@ -16,6 +17,7 @@ export default {
     file: 'public/build/bundle.js'
   },
   plugins: [
+    svg({ stringify: true }),
     svelte({
       // enable run-time checks when not in production
       dev: !production,
