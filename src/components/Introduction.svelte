@@ -1,22 +1,38 @@
 <script>
   import { Icon, Button } from './UI';
+  import okbeLogo from '../img/logo/okbe.svg';
+  import bosaLogo from '../img/logo/bosa.svg';
+  import prototypefundLogo from '../img/logo/prototypefund.svg';
 </script>
 
 <div id="intro" class="wrapper">
   <div class="background-wrapper">
     <div class="container">
-      <section class="content">
-        <h2>Civic Innovators, this is your chance.</h2>
-        <p>
-          Help the Belgian government innovate in 4 public interest topics at
-          Open Summer of Code 2020 in July.
-        </p>
-        <p>
-          <Icon name="clock" />
-          Applications are open until May 8, 2020.
-        </p>
-        <Button href="#topics" outline capitalize>Discover topics</Button>
-      </section>
+      <div class="content-wrapper">
+        <section class="content">
+          <h2>Civic Innovators, this is your chance.</h2>
+          <p>
+            Help the Belgian government innovate in 4 public interest topics at
+            Open Summer of Code 2020 in July.
+          </p>
+          <p>
+            <Icon name="clock" />
+            Applications are open until May 8, 2020.
+          </p>
+          <Button href="#topics" outline capitalize>Discover topics</Button>
+        </section>
+        <div class="logos">
+          <div class="logo-container">
+            {@html okbeLogo}
+          </div>
+          <div class="logo-container">
+            {@html bosaLogo}
+          </div>
+          <div class="logo-container ppf-logo">
+            {@html prototypefundLogo}
+          </div>
+        </div>
+      </div>
 
       <div class="image-container">
         <img
@@ -75,6 +91,37 @@
   .content {
     width: 40rem;
     color: var(--color-white);
+  }
+
+  .logos {
+    display: flex;
+    width: 50rem;
+    align-items: center;
+    margin-top: 3rem;
+  }
+
+  .logo-container {
+    width: 12rem;
+    margin-right: 2rem;
+  }
+
+  .logo-container :global(svg) {
+    max-width: 100%;
+  }
+
+  .logo-container :global(.fill-target) {
+    transition: fill 0.3s ease;
+  }
+
+  /* to revert to initial svg fills, the "initial" value does not work
+     using :not isn't *that* sketchy
+  */
+  :global(.logo-container:not(:hover) .fill-target) {
+    fill: var(--color-white) !important;
+  }
+
+  .ppf-logo {
+    transform: scale(0.9);
   }
 
   .image-container {
