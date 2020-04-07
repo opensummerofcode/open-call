@@ -22,7 +22,7 @@
           <Button href="#topics" outline capitalize>Discover topics</Button>
         </section>
         <div class="logos">
-          <div class="logo-container">
+          <div class="logo-container okbe-logo">
             {@html okbeLogo}
           </div>
           <div class="logo-container">
@@ -118,6 +118,11 @@
   */
   :global(.logo-container:not(:hover) .fill-target) {
     fill: var(--color-white) !important;
+  }
+
+  /* yes, these scales were eyeballed. https://i.imgur.com/wLcC3zF.mp4 */
+  .okbe-logo {
+    transform: scale(1.1);
   }
 
   .ppf-logo {
