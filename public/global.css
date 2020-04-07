@@ -40,8 +40,6 @@ body {
   font-size: 1.7rem;
   font-family: var(--font-copy);
   position: relative;
-  /* TODO: remove */
-  padding-bottom: 60rem;
 }
 
 *,
@@ -96,9 +94,6 @@ a:hover {
 input,
 textarea {
   font-family: var(--font-copy);
-}
-
-.container {
 }
 
 .container {
