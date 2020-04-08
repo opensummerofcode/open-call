@@ -23,13 +23,19 @@
         </section>
         <div class="logos">
           <div class="logo-container okbe-logo">
-            {@html okbeLogo}
+            <a href="https://openknowledge.be" target="_blank">
+              {@html okbeLogo}
+            </a>
           </div>
           <div class="logo-container">
-            {@html bosaLogo}
+            <a href="https://bosa.belgium.be" target="_blank">
+              {@html bosaLogo}
+            </a>
           </div>
           <div class="logo-container ppf-logo">
-            {@html prototypefundLogo}
+            <a href="https://prototypefund.de" target="_blank">
+              {@html prototypefundLogo}
+            </a>
           </div>
         </div>
       </div>
@@ -103,6 +109,34 @@
   .logo-container {
     width: 12rem;
     margin-right: 2rem;
+    position: relative;
+  }
+
+  /* circle effect */
+  .logo-container:hover:before {
+    content: '';
+    border-radius: 50%;
+    background-color: var(--color-white);
+    width: 17rem;
+    height: 17rem;
+    position: absolute;
+    top: calc(50% - 8.5rem);
+    left: calc(50% - 8.5rem);
+    opacity: 0;
+    animation: scaleIn 0.6s 1;
+    animation-fill-mode: forwards;
+    z-index: -1;
+  }
+
+  @keyframes scaleIn {
+    from {
+      transform: scale(0, 0);
+      opacity: 0.5;
+    }
+    to {
+      transform: scale(1, 1);
+      opacity: 1;
+    }
   }
 
   .logo-container :global(svg) {

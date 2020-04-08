@@ -7,6 +7,7 @@
   import Topics from './Topics.svelte';
   import Timeline from './Timeline.svelte';
   import FAQ from './FAQ.svelte';
+  import Footer from './Footer.svelte';
 
   import navigable from '../actions/navigable';
 
@@ -26,6 +27,7 @@
     <Timeline />
     <FAQ />
   </main>
+  <Footer />
 </div>
 
 <style>
