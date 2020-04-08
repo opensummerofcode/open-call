@@ -5,7 +5,11 @@
 
   let isOpen = false;
 
-  const open = () => (isOpen = !isOpen);
+  const open = function() {
+    //remove focus style instanty
+    this.blur();
+    isOpen = !isOpen;
+  };
 </script>
 
 <dt>
@@ -33,7 +37,30 @@
     border: 0;
     background: transparent;
     margin-left: 0.8rem;
+    padding-left: 0.8rem;
     cursor: pointer;
+    text-align: left;
+    outline: 0;
+    display: inline-block;
+  }
+
+  button:after {
+    background: none repeat scroll 0 0 transparent;
+    bottom: -0.4rem;
+    content: '';
+    display: block;
+    height: 0.2rem;
+    left: 50%;
+    position: absolute;
+    background: var(--color-light-blue);
+    transition: width 0.2s ease 0s, left 0.2s ease 0s;
+    width: 0;
+  }
+
+  button:focus:after,
+  button:hover:after {
+    width: 100%;
+    left: 0;
   }
 
   .caret {
@@ -42,13 +69,13 @@
     display: inline-block;
     border: 0.6rem solid transparent;
     position: absolute;
-    top: calc(50% - 0.6rem);
+    top: 0.3rem;
     left: -0.6rem;
     border-left-color: var(--color-dark-purple);
     transition: transform 0.2s ease-in-out;
   }
   .caret.open {
-    top: calc(50% - 0.3rem);
+    top: 0.5rem;
     transform: rotate(90deg);
   }
 
