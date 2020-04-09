@@ -7,15 +7,20 @@
     faStreetView,
     faBrain,
     faServer,
-    faIdCard
+    faIdCard,
+    faEnvelope
   } from '@fortawesome/free-solid-svg-icons';
+  import { faLinkedinIn, faTwitter } from '@fortawesome/free-brands-svg-icons';
 
   const icons = {
     clock: faClock,
     citizen: faStreetView,
     brain: faBrain,
     server: faServer,
-    'id-card': faIdCard
+    'id-card': faIdCard,
+    twitter: faTwitter,
+    linkedIn: faLinkedinIn,
+    mail: faEnvelope
   };
 
   let icon = icons[name];
