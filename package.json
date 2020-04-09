@@ -10,6 +10,7 @@
     "lint:fix": "eslint --fix src/**/*.svelte src/**/*.js"
   },
   "devDependencies": {
+    "@fortawesome/free-brands-svg-icons": "^5.13.0",
     "@fortawesome/free-solid-svg-icons": "^5.13.0",
     "@rollup/plugin-commonjs": "^11.0.0",
     "@rollup/plugin-image": "^2.0.4",
