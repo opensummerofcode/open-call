@@ -211,9 +211,14 @@
     }
   }
 
-  @media screen and (max-width: 425px) {
+  @media screen and (max-width: 568px) {
     nav {
       padding: 0 2rem;
+    }
+  }
+
+  @media screen and (max-width: 425px) {
+    nav {
       justify-content: space-between;
     }
     nav :global(.hamburger) {

@@ -6,41 +6,43 @@
 </script>
 
 <footer>
-  <div class="organised-by">
-    <h2>Organised By</h2>
-    <div class="wrapper logo okbe">
-      <a href="https://openknowledge.be" target="_blank">
-        {@html okbeLogo}
-      </a>
-    </div>
-  </div>
-  <div class="supported-by">
-    <h2>With the support of</h2>
-    <div class="wrapper logos">
-      <div class="logo">
-        <a href="https://bosa.belgium.be" target="_blank">
-          {@html bosa}
-        </a>
-      </div>
-      <div class="logo ppf">
-        <a href="https://prototypefund.de" target="_blank">
-          {@html prototypefund}
+  <div class="footer-wrapper">
+    <div class="organised-by">
+      <h2>Organised By</h2>
+      <div class="wrapper logo okbe">
+        <a href="https://openknowledge.be" target="_blank">
+          {@html okbeLogo}
         </a>
       </div>
     </div>
-  </div>
-  <div class="socials">
-    <h2>Stay in touch</h2>
-    <div class="wrapper icons">
-      <a href="https://twitter.com/openknwledgebe" target="_blank">
-        <Icon name="twitter" />
-      </a>
-      <a href="https://www.linkedin.com/company/4872375/" target="_blank">
-        <Icon name="linkedIn" />
-      </a>
-      <a href="mailto:opencall@openknowledge.be">
-        <Icon name="mail" />
-      </a>
+    <div class="supported-by">
+      <h2>With the support of</h2>
+      <div class="wrapper logos">
+        <div class="logo">
+          <a href="https://bosa.belgium.be" target="_blank">
+            {@html bosa}
+          </a>
+        </div>
+        <div class="logo ppf">
+          <a href="https://prototypefund.de" target="_blank">
+            {@html prototypefund}
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="socials">
+      <h2>Stay in touch</h2>
+      <div class="wrapper icons">
+        <a href="https://twitter.com/openknwledgebe" target="_blank">
+          <Icon name="twitter" />
+        </a>
+        <a href="https://www.linkedin.com/company/4872375/" target="_blank">
+          <Icon name="linkedIn" />
+        </a>
+        <a href="mailto:opencall@openknowledge.be">
+          <Icon name="mail" />
+        </a>
+      </div>
     </div>
   </div>
 </footer>
@@ -48,15 +50,21 @@
 <style>
   footer {
     width: 100%;
-    padding: 2rem 5rem;
     box-shadow: 0 0.1rem 0.6rem 0.3rem rgba(81, 81, 81, 0.2);
+  }
+
+  .footer-wrapper {
+    width: 100%;
+    max-width: 120rem;
+    margin: 0 auto;
+    padding: 2rem 5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 20rem;
   }
 
-  footer > div {
+  .footer-wrapper > div {
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -130,23 +138,21 @@
   }
 
   @media screen and (max-width: 600px) {
-    footer {
+    .footer-wrapper {
       display: flex;
       flex-direction: column;
       align-items: center;
       height: auto;
+      max-width: 120rem;
+      padding-bottom: 0;
     }
 
-    footer > div {
+    .footer-wrapper > div {
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: space-between;
       margin-bottom: 3.6rem;
-    }
-
-    footer {
-      padding-bottom: 0;
     }
   }
 </style>
