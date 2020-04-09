@@ -6,7 +6,7 @@
 </script>
 
 <footer>
-  <div>
+  <div class="organised-by">
     <h2>Organised By</h2>
     <div class="wrapper logo okbe">
       <a href="https://openknowledge.be" target="_blank">
@@ -14,7 +14,7 @@
       </a>
     </div>
   </div>
-  <div>
+  <div class="supported-by">
     <h2>With the support of</h2>
     <div class="wrapper logos">
       <div class="logo">
@@ -29,7 +29,7 @@
       </div>
     </div>
   </div>
-  <div>
+  <div class="socials">
     <h2>Stay in touch</h2>
     <div class="wrapper icons">
       <a href="https://twitter.com/openknwledgebe" target="_blank">
@@ -90,10 +90,32 @@
   .icons a {
     margin-left: 2rem;
     color: var(--color-light-blue);
+    display: inline-block;
+    position: relative;
+    outline: 0;
   }
 
-  .icons a:first {
+  .icons a:first-child {
     margin-left: 0;
+  }
+
+  .icons a:after {
+    background: none repeat scroll 0 0 transparent;
+    bottom: -0.4rem;
+    content: '';
+    display: block;
+    height: 0.2rem;
+    left: 50%;
+    position: absolute;
+    background: var(--color-light-blue);
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0;
+  }
+
+  .icons a:focus:after,
+  .icons a:hover:after {
+    width: 100%;
+    left: 0;
   }
 
   .logo {
@@ -105,5 +127,26 @@
   }
   .logo.ppf {
     width: 8rem;
+  }
+
+  @media screen and (max-width: 600px) {
+    footer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: auto;
+    }
+
+    footer > div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 3.6rem;
+    }
+
+    footer {
+      padding-bottom: 0;
+    }
   }
 </style>
