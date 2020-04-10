@@ -8,7 +8,7 @@
 <div id="intro" class="wrapper">
   <div class="background-wrapper">
     <div class="container">
-      <div class="content-wrapper">
+      <div class="content-wrapper" data-aos="fade-up" data-aos-duration="800">
         <section class="content">
           <h2>Civic Innovators, this is your chance.</h2>
           <p>
@@ -40,7 +40,7 @@
         </div>
       </div>
 
-      <div class="image-container">
+      <div class="image-container" data-aos="fade-left" data-aos-duration="800">
         <img
           src="images/intro/intro.jpg"
           alt="Team of hardworking innovators" />

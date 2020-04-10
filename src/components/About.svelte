@@ -1,4 +1,4 @@
-<section id="about" class="container site-section">
+<section id="about" class="container site-section" data-aos="fade-up">
   <h2>About this call</h2>
   <p class="intro-text">
     The high level of civic engagement in the current COVID-19 crisis and the

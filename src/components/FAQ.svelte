@@ -8,7 +8,7 @@
   });
 </script>
 
-<div class="background-wrapper site-section">
+<div class="background-wrapper site-section" data-aos="fade-up">
   <section id="faq" class="container">
     <h2>Frequently asked questions</h2>
     <p>

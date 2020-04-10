@@ -24,7 +24,7 @@
       </h3>
       <p>
         <strong>
-          <a href="">Virtual meetup</a>
+          <a href="#">Virtual meetup</a>
           to share information about the topics and provide feedback
         </strong>
       </p>
