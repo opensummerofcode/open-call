@@ -43,7 +43,7 @@
     left: calc(50% - 3rem);
     background-color: var(--color-light-blue);
     box-shadow: 0 4px 20px -5px rgba(66, 133, 244, 0.4);
-    color: #fff;
+    color: var(--color-white);
     display: flex;
     align-items: center;
     justify-content: center;
