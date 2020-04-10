@@ -34,7 +34,28 @@
           proposal come to life. This call accepts proposals that fit into one
           of the four categories.
         </p>
+        <p>
+          One project proposal will be selected per topic. Our selection
+          criteria:
+        </p>
+        <ul>
+          <li>Innovative character of your open source project proposal</li>
+          <li>Relevance & societal impact of your project</li>
+          <li>Feasibility (realistic in terms of deliverables)</li>
+          <li>Project sustainability after Open Summer of Code</li>
+          <li>Your involvement</li>
+        </ul>
       </div>
+    </div>
+    <div class="join-us">
+      <p>
+        Want to hear more details about the topics? Join
+        <a href="#">our virtual meetup</a>
+        on Tuesday April 21st from 15:00 until 16:30. You can also see this as
+        an opportunity to get feedback on your project ideas! If you can’t make
+        it to the meetup, no worries, we’ll record it and put it online
+        afterwards.
+      </p>
     </div>
   </section>
 </div>
@@ -59,6 +80,20 @@
 
   .content {
     flex: 1;
+  }
+
+  .join-us {
+    margin-top: 3rem;
+    background: var(--color-white);
+    border-radius: 1.2rem;
+    padding: 3rem;
+    text-align: center;
+    box-shadow: rgba(81, 81, 81, 0.1) 0px 0px 32px 1px;
+  }
+
+  .join-us p {
+    margin: 0 auto;
+    font-size: 1.8rem;
   }
 
   .topics {
@@ -94,6 +129,10 @@
     .topics {
       grid-template-columns: repeat(1, 1fr);
       grid-template-rows: repeat(4, 1fr);
+    }
+    .join-us p {
+      margin: 0 auto;
+      font-size: 1.6rem;
     }
   }
 </style>
