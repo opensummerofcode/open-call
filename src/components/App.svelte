@@ -1,5 +1,10 @@
 <script>
+  import { onMount } from 'svelte';
   import smoothscroll from 'smoothscroll-polyfill';
+
+  import 'normalize.css';
+  import AOS from 'aos';
+  import 'aos/dist/aos.css';
 
   import Navigation from './Navigation.svelte';
   import Introduction from './Introduction.svelte';
@@ -13,8 +18,12 @@
 
   import addAnalytics from '../analytics';
 
+  onMount(() => {
+    AOS.init();
+    if (process.env.production) addAnalytics();
+  });
+
   smoothscroll.polyfill();
-  if (process.env.production) addAnalytics();
 </script>
 
 <div use:navigable>

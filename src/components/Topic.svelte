@@ -4,7 +4,7 @@
   import { Icon } from './UI';
 </script>
 
-<article>
+<article data-aos="fade-up">
   <div>
     <Icon name={icon} />
   </div>

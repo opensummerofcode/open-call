@@ -1,6 +1,17 @@
+<script>
+  const scrollable = container => {
+    container.querySelectorAll('article').forEach((timelineItem, i) => {
+      timelineItem.setAttribute(
+        'data-aos',
+        i % 2 === 0 ? 'fade-left' : 'fade-right'
+      );
+    });
+  };
+</script>
+
 <section id="timeline" class="container site-section">
   <h2>Timeline</h2>
-  <div class="timeline">
+  <div class="timeline" use:scrollable>
     <article>
       <h3>
         <time datetime="2020-04-14">April 14</time>
