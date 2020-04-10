@@ -78,6 +78,10 @@
     justify-content: space-between;
   }
 
+  .logos .logo:first-child {
+    margin-right: 2rem;
+  }
+
   h2 {
     font-size: 2rem;
     font-weight: 900;
